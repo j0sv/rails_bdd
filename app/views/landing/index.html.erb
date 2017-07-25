@@ -1,0 +1,13 @@
+<h1>Landing#index</h1>
+<p>Find me in app/views/landing/index.html.erb</p>
+
+<ul>
+  <% @articles.each do |article| %>
+      <li>
+        <%= article.title %><br />
+        <%= article.content %>
+      </li>
+  <% end %>
+</ul>
+
+<a href="/articles/new">Create new article</a>
