@@ -1,11 +1,24 @@
 <h1>Articles</h1>
-<ul>
-  <% @articles.each do |article| %>
-      <li>
-        <%= article.title %><br />
-        <%= article.content %>
-      </li>
-  <% end %>
-</ul>
 
-<a href="/articles/new">Create new article</a>
+<% @articles.each do |article| %>
+    <div class="row">
+      <div class="col s12">
+        <div class="card hoverable">
+          <div class="card-content">
+            <span class="card-title"><%= article.title %></span>
+            <p><%= article.content %></p>
+            <hr>
+            <p>Written by <%= article.author %> at <%= article.created_at %></p>
+          </div>
+          <div class="card-content">
+            <strong></strong>
+          </div>
+          <div class="card-action">
+
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+<a href="<%= new_article_path  %>">Create new article</a>

@@ -2,9 +2,5 @@
 
 <h1><%= @article.title %></h1>
 <p><%= @article.content %></p>
+<p>Written by <%= @article.author %> at <%= @article.created_at %></p>
 
-<%#= form_for @article, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-    <%#= f.text_field :title %>
-    <%#= f.text_area :content, size: "60x12" %>
-    <%#= f.submit "Create" %>
-<%#= end %>

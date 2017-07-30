@@ -18,8 +18,15 @@ Feature: Create articles
 
   Scenario: Blogger doesn't enter a title for the article [Sad Path]
     When I fill in "Content" with "Excited about learning a new framework"
-#    Then show me the page
     And I click "Create Article" button
     Then I should see "Title can't be blank"
 
-  # Write another sad path scenario you can think of
+  Scenario: Blogger doesn't enter a content for the article [Sad Path]§
+    When I fill in "Title" with "Learn Ruby the Hard Way"
+    And I click "Create Article" button
+    Then I should see "Content can't be blank"
+
+  Scenario: Blogger doesn't enter a content for the article [Sad Path]
+    When I click "Create Article" button
+    Then I should see "Content can't be blank"
+    And I should see "Title can't be blank"
