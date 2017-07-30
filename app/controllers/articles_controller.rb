@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
     @article = Article.find(params[:id])
     @comments = @article.comments
+    @comment = Comment.new
 
   end
 

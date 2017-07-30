@@ -19,11 +19,22 @@
           <% end %>
           <br>
           <%= comment.comment %>
-
         <% end %>
       </div>
       <div class="card-action">
-        <a href="/articles/<%= @article.id  %>">Read article</a>
+        <span class="card-title">Add Comment:</span>
+        <%= form_for @comment, url: articles_path, html: {class: "nifty_form"} do |f| %>
+            <%= f.hidden_field :article_id, value: @article.id %>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+            <%= f.label :comment %>
+            <%= f.text_area :comment, size: "60x96" %>
+            <%= f.submit "Save Comment" %>
+        <% end %>
+
+
       </div>
     </div>
   </div>
