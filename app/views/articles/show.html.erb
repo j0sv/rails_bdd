@@ -1,6 +1,32 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card hoverable">
+      <div class="card-content">
+        <span class="card-title"><%= @article.title %></span>
+        <p><%= @article.content %></p>
+        <br><br>
+        <hr>
+        <p>Written by <%= @article.author %> at <%= @article.created_at %></p>
+      </div>
+      <div class="card-content">
+        <div>Comments:</div>
+        <% @comments.each do |comment| %>
+          <hr>
+          <% if comment.email.nil? %>
+            <%= comment.name %> | <%= comment.created_at %>
+          <% else %>
+            <a href="mailto:<%= comment.email %>"><%= comment.name %> </a> | <%= comment.created_at %>
+          <% end %>
+          <br>
+          <%= comment.comment %>
 
+        <% end %>
+      </div>
+      <div class="card-action">
+        <a href="/articles/<%= @article.id  %>">Read article</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1><%= @article.title %></h1>
-<p><%= @article.content %></p>
-<p>Written by <%= @article.author %> at <%= @article.created_at %></p>
 

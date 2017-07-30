@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
     # /articles/1
 
     @article = Article.find(params[:id])
+    @comments = @article.comments
+
   end
 
   def index

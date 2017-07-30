@@ -17,6 +17,13 @@ Given(/^the following articles exist$/) do |table|
   end
 end
 
+Given(/^the following article comments exist$/) do |table|
+  table.hashes.each do |hash|
+    #binding.pry
+    Comment.create!(hash)
+  end
+end
+
 When(/^I am on the landing page$/) do
   visit root_path
 end
@@ -35,6 +42,9 @@ When(/^I should be on "([^"]*)" page$/) do |article_title|
   expect(page).to have_current_path("/articles/#{article.id}")
 end
 
+When(/^I am on the article "([^"]*)" page$/) do |arg1|
+  visit "/articles/1"
+end
 
 Then(/^show me the page$/) do
   save_and_open_page

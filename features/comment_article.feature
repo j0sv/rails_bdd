@@ -6,13 +6,13 @@ Feature: List articles comments and add comment on show article page
   Background:
     Given the following articles exist
       | title                | content                          | author |
-      | A breaking news item | Some really breaking action      | Thomas |
       | Learn Rails 5        | Build awesome rails applications | Amber  |
+      | A breaking news item | Some really breaking action      | Thomas |
 
     Given the following article comments exist
-      | title          | content                               | author      |
-      | Learn Rails 5  | That is some really good reading!     | TheDude     |
-      | Learn Rails 5  | Rails is so cool, it's almost poetic! | Rails4Life  |
+      | article_id  | name      | email              | comment                               |
+      | 1           | TheDude   | thedude@gmail.com  | That is some really good reading!     |
+      | 1           | Erik      | erik@hotmail.com   | Rails is so cool, it's almost poetic! |
 
   Scenario: Viewing list of articles on application's landing page
     When I am on the article "Learn Rails 5" page
