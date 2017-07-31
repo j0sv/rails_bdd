@@ -22,7 +22,7 @@ Feature: List articles comments and add comment on show article page
     And I fill in "Name" with "Rails4Life"
     And I fill in "Email" with "rails4life@therailsdude.io"
     And I click "Save Comment" button
-    Then I should see "Your message was successfully saved!"
+    Then I should see "Comment was successfully created."
 
   Scenario: Viewing list of articles on application's landing page
     When I am on the article "Learn Rails 5" page

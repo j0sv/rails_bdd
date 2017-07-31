@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index, :show, :new, :create]
 
-  resources :articles, only: [:create]
+  resources :comments, only: [:create]
 
 end

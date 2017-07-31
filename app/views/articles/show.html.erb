@@ -23,7 +23,7 @@
       </div>
       <div class="card-action">
         <span class="card-title">Add Comment:</span>
-        <%= form_for @comment, url: articles_path, html: {class: "nifty_form"} do |f| %>
+        <%= form_for @comment, url: comments_path, html: {class: "nifty_form"} do |f| %>
             <%= f.hidden_field :article_id, value: @article.id %>
             <%= f.label :name %>
             <%= f.text_field :name %>
@@ -33,7 +33,6 @@
             <%= f.text_area :comment, size: "60x96" %>
             <%= f.submit "Save Comment" %>
         <% end %>
-
 
       </div>
     </div>
