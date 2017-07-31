@@ -12,7 +12,7 @@
         <div>Comments:</div>
         <% @comments.each do |comment| %>
           <hr>
-          <% if comment.email.nil? %>
+          <% if comment.email.nil? || comment.email == "" %>
             <%= comment.name %> | <%= comment.created_at %>
           <% else %>
             <a href="mailto:<%= comment.email %>"><%= comment.name %> </a> | <%= comment.created_at %>
