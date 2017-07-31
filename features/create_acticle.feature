@@ -26,7 +26,7 @@ Feature: Create articles
     And I click "Create Article" button
     Then I should see "Content can't be blank"
 
-  Scenario: Blogger doesn't enter a content for the article [Sad Path]
+  Scenario: Blogger doesn't enter a title and content for the article [Sad Path]
     When I click "Create Article" button
     Then I should see "Content can't be blank"
     And I should see "Title can't be blank"

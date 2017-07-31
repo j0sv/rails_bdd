@@ -14,7 +14,7 @@ Feature: List articles comments and add comment on show article page
       | 1           | TheDude   | thedude@gmail.com  | That is some really good reading!     |
       | 1           | Erik      | erik@hotmail.com   | Rails is so cool, it's almost poetic! |
 
-  Scenario: Viewing list of articles on application's landing page
+  Scenario: Visitor entering a valid comment [Happy Path]
     When I am on the article "Learn Rails 5" page
     Then I should see "Learn Rails 5"
     And I should see "Rails is so cool, it's almost poetic!"
@@ -24,7 +24,7 @@ Feature: List articles comments and add comment on show article page
     And I click "Save Comment" button
     Then I should see "Comment was successfully created."
 
-  Scenario: Viewing list of articles on application's landing page
+  Scenario: Visitor entering an invalid comment, Comment field empty [Sad Path]
     When I am on the article "Learn Rails 5" page
     When I fill in "Name" with "Rails4Life"
     And I fill in "Email" with "rails4life@therailsdude.io"
